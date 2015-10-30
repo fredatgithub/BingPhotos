@@ -35,7 +35,7 @@ namespace BingPhotoOfDayClient
     }
 
     /// <summary>
-    /// Downloads the photo of the day synchronously
+    /// Download the photo of the day synchronously
     /// </summary>
     public void DownLoad()
     {
@@ -87,7 +87,7 @@ namespace BingPhotoOfDayClient
     }
 
     /// <summary>
-    /// Asyncronous & awaitable version of the download routine
+    /// Asynchronous & awaitable version of the download routine
     /// </summary>
     /// <returns>An awaitable task</returns>
     public Task DownloadAsync()
@@ -99,24 +99,24 @@ namespace BingPhotoOfDayClient
     }
 
     /// <summary>
-    /// Gets the Photo of the day in a WPF compiliant ImageSource
+    /// Get the Photo of the day in a WPF compliant ImageSource
     /// </summary>
     public ImageSource WpfPhotoOfTheDay
     {
       get
       {
-        if (!_loadcalled) throw new InvalidOperationException("Call the DownLoad() methood first");
+        if (!_loadcalled) throw new InvalidOperationException("Call the DownLoad() method first");
         return new BitmapImage(new Uri(_tempfilename));
       }
     }
     /// <summary>
-    /// Gets the Photo of the day in a Windows Forms compiliant ImageSource
+    /// Gets the Photo of the day in a Windows Forms compliant ImageSource
     /// </summary>
     public Bitmap WfPhotoOfTheDay
     {
       get
       {
-        if (!_loadcalled) throw new InvalidOperationException("Call the DownLoad() methood first");
+        if (!_loadcalled) throw new InvalidOperationException("Call the DownLoad() method first");
         return new Bitmap(_tempfilename);
       }
     }
@@ -124,10 +124,6 @@ namespace BingPhotoOfDayClient
     /// <summary>
     /// CoppyRight data information
     /// </summary>
-    public string CoppyRightData
-    {
-      get;
-      private set;
-    }
+    public string CoppyRightData{get;private set;}
   }
 }
